@@ -29,3 +29,14 @@ fun Activity.copyValue(value: String) {
     val clipData: ClipData = ClipData.newPlainText("value", value)
     clipboardManager.setPrimaryClip(clipData)
 }
+
+fun Activity.showAlert(msg: String /*dialogInterface: DialogInterface.OnClickListener*/) {
+    val pickDialog = android.app.AlertDialog.Builder(this)
+    pickDialog.setCancelable(false)
+//    pickDialog.setPositiveButton("OK", dialogInterface)
+    pickDialog.setPositiveButton(
+        "OK"
+    ) { dialog, which -> dialog.dismiss() }
+    pickDialog.setMessage(msg)
+    pickDialog.show()
+}
