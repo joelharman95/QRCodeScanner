@@ -1,4 +1,4 @@
-package com.eagleappbuffer.qrcodescanner
+package com.eagleappbuffer.qrcodescanner.view
 
 import android.content.Intent
 import android.os.Build
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import com.eagleappbuffer.qrcodescanner.R
+import com.eagleappbuffer.qrcodescanner.showAlert
 import com.google.android.gms.tasks.Task
 import com.google.mlkit.vision.barcode.Barcode
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
@@ -40,6 +42,28 @@ class ScannerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scanner)
+
+        ivTorch.setOnClickListener {
+            if (camera?.cameraInfo?.hasFlashUnit() as Boolean) {
+            } else {
+                showAlert("Flash not available on your phone")
+                return@setOnClickListener
+            }
+
+            try {
+                if (ivTorch.tag == "0") {
+                    ivTorch.tag = "1"
+                    camera?.cameraControl?.enableTorch(true)
+                    ivTorch.setImageResource(R.drawable.torch_on)
+                } else {
+                    ivTorch.tag = "0"
+                    camera?.cameraControl?.enableTorch(false)
+                    ivTorch.setImageResource(R.drawable.torch_off)
+                }
+            } catch (e: Exception) {
+                println("GET________$e")
+            }
+        }
 
         lifecycle.addObserver(barcodeScanner)
 //        cameraExecutor = Executors.newSingleThreadExecutor()
@@ -103,7 +127,7 @@ class ScannerActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        cameraExecutor?.shutdown()
+        cameraExecutor.shutdown()
         super.onDestroy()
     }
 

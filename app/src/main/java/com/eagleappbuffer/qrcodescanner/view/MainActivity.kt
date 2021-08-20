@@ -1,4 +1,4 @@
-package com.eagleappbuffer.qrcodescanner
+package com.eagleappbuffer.qrcodescanner.view
 
 import android.Manifest
 import android.content.Intent
@@ -7,9 +7,14 @@ import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.eagleappbuffer.qrcodescanner.R
+import com.eagleappbuffer.qrcodescanner.showAlert
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private var hasClicked = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         val requestPermissionLauncher =
             registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
                 if (isGranted) {
-                    startActivity(Intent(this, ScannerActivity::class.java))
+                    if (hasClicked)
+                        startActivity(Intent(this, ScannerActivity::class.java))
                 } else {
                     showAlert("Camera permission is needed for this app to operate")
                 }
@@ -26,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         requestPermissionLauncher.launch(Manifest.permission.CAMERA)
 
         llScan.setOnClickListener {
+            hasClicked = true
             when {
                 ContextCompat.checkSelfPermission(
                     this,

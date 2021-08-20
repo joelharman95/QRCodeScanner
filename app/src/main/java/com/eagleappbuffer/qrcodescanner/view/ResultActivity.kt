@@ -1,8 +1,12 @@
-package com.eagleappbuffer.qrcodescanner
+package com.eagleappbuffer.qrcodescanner.view
 
 import android.graphics.Paint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.eagleappbuffer.qrcodescanner.R
+import com.eagleappbuffer.qrcodescanner.copyValue
+import com.eagleappbuffer.qrcodescanner.openBrowser
+import com.eagleappbuffer.qrcodescanner.shareCode
 import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
