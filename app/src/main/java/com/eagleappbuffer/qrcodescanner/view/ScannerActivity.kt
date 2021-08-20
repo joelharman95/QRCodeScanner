@@ -66,7 +66,6 @@ class ScannerActivity : AppCompatActivity() {
         }
 
         lifecycle.addObserver(barcodeScanner)
-//        cameraExecutor = Executors.newSingleThreadExecutor()
         imageAnalyzer = ImageAnalysis.Builder()
             .setTargetResolution(targetResolution)
             .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
