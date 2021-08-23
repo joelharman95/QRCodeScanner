@@ -8,6 +8,16 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    signingConfigs {
+        defaultconfig {
+            storeFile project.file("key.jks")
+            storePassword '123456'
+            keyAlias 'QRCode'
+            keyPassword '123456'
+            //v2SigningEnabled false
+        }
+    }
+
     defaultConfig {
         applicationId "com.eagleappbuffer.qrcodescanner"
         minSdkVersion 23
@@ -19,6 +29,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            signingConfig signingConfigs.defaultconfig
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
