@@ -78,14 +78,9 @@ class ScannerActivity : AppCompatActivity() {
                 barcodeScanner.process(inputImage)
                     .addOnSuccessListener { barcodes: List<Barcode> ->
                         for (barcode in barcodes) {
-                            val vibrator =
-                                applicationContext.getSystemService(VIBRATOR_SERVICE) as Vibrator
-                            if (Build.VERSION.SDK_INT > 28) vibrator.vibrate(
-                                VibrationEffect.createOneShot(
-                                    100,
-                                    VibrationEffect.DEFAULT_AMPLITUDE
-                                )
-                            ) else vibrator.vibrate(100)
+                            /*val vibrator = applicationContext.getSystemService(VIBRATOR_SERVICE) as Vibrator
+                            if (Build.VERSION.SDK_INT > 28) vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
+                            else vibrator.vibrate(100)*/
                             if (!readed) {
                                 readed = true
                                 val intent = Intent(this, ResultActivity::class.java)
