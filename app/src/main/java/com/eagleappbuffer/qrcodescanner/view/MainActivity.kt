@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-        requestPermissionLauncher.launch(Manifest.permission.CAMERA)
+//        requestPermissionLauncher.launch(Manifest.permission.CAMERA)
 
         llScan.setOnClickListener {
             hasClicked = true
