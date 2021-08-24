@@ -1,17 +1,14 @@
 package com.eagleappbuffer.qrcodescanner.view
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
 import android.util.Size
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.eagleappbuffer.qrcodescanner.R
-import com.eagleappbuffer.qrcodescanner.showAlert
+import com.eagleappbuffer.qrcodescanner.utils.showAlert
 import com.google.android.gms.tasks.Task
 import com.google.mlkit.vision.barcode.Barcode
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions

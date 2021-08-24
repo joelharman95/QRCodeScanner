@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.eagleappbuffer.qrcodescanner.R
-import com.eagleappbuffer.qrcodescanner.copyValue
-import com.eagleappbuffer.qrcodescanner.openBrowser
+import com.eagleappbuffer.qrcodescanner.utils.copyValue
+import com.eagleappbuffer.qrcodescanner.utils.openBrowser
 import com.eagleappbuffer.qrcodescanner.pref.PreferenceManager
-import com.eagleappbuffer.qrcodescanner.shareCode
+import com.eagleappbuffer.qrcodescanner.utils.shareCode
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds

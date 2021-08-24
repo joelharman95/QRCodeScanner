@@ -1,4 +1,4 @@
-package com.eagleappbuffer.qrcodescanner
+package com.eagleappbuffer.qrcodescanner.utils
 
 import android.app.Activity
 import android.content.ClipData
@@ -6,6 +6,9 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
+
+fun Activity.showToast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 
 fun Activity.shareCode(value: String) {
     val intent = Intent()
@@ -28,6 +31,7 @@ fun Activity.copyValue(value: String) {
     val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     val clipData: ClipData = ClipData.newPlainText("value", value)
     clipboardManager.setPrimaryClip(clipData)
+    showToast("Copied")
 }
 
 fun Activity.showAlert(msg: String /*dialogInterface: DialogInterface.OnClickListener*/) {

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.eagleappbuffer.qrcodescanner.R
 import com.eagleappbuffer.qrcodescanner.pref.PreferenceManager
-import com.eagleappbuffer.qrcodescanner.showAlert
+import com.eagleappbuffer.qrcodescanner.utils.showAlert
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
