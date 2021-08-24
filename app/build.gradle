@@ -26,6 +26,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -33,7 +35,8 @@ android {
             signingConfig signingConfigs.defaultconfig
         }
         release {
-            minifyEnabled false
+            minifyEnabled = true
+            shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -64,5 +67,10 @@ dependencies {
     /*Barcode and QRCode Scanner*/
     implementation 'com.google.mlkit:barcode-scanning:17.0.0'
     /*Ads*/
-    implementation 'com.google.android.gms:play-services-ads:20.2.0'
+//    implementation 'com.google.android.gms:play-services-ads:20.2.0'
+    implementation 'com.google.android.gms:play-services-ads-lite:20.3.0'
+
+    // Add this dependency and multiDexEnabled = true in your defaultConfig to solve the error:
+    // Cannot fit requested classes in a single dex file
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
