@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QRCodeScanner</string>
+    <string name="app_name">QR and BarCode Scanner</string>
     <string name="action_scan_now">Scan Now</string>
     <string name="action_visit_now">Visit Now</string>
     <string name="action_copy">Copy</string>

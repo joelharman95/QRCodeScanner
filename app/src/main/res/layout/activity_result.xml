@@ -1,161 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    android:fillViewport="true"
     tools:context=".view.ResultActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@id/adView"
+        android:fillViewport="true">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="232dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/qricon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvOutput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="Scanned Output"
-            android:textColor="@color/black"
-            android:textSize="@dimen/size_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etOutput"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/edittext_corner"
-            android:fontFamily="@font/nunito_regular"
-            android:gravity="start"
-            android:lines="6"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:textSize="@dimen/size_16"
-            app:layout_constraintTop_toBottomOf="@id/tvOutput"
-            tools:text="https://en.wikipedia.org/wiki/QR_Code" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/llCopy"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/button_corner_with_stroke"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:gravity="center"
-            app:layout_constraintEnd_toStartOf="@id/llShare"
-            app:layout_constraintStart_toStartOf="@id/etOutput"
-            app:layout_constraintTop_toBottomOf="@id/etOutput">
+            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="19dp"
-                android:layout_height="22dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_copy"
-                app:tint="@color/button_bg_color" />
+                android:id="@+id/ivLogo"
+                android:layout_width="232dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/qricon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvCopy"
+                android:id="@+id/tvOutput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_regular"
-                android:text="@string/action_copy"
-                android:textAllCaps="false"
+                android:text="Scanned Output"
                 android:textColor="@color/black"
-                android:textSize="@dimen/size_22"
-                app:cornerRadius="4dp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                android:textSize="@dimen/size_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/llShare"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/button_corner_with_stroke"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="@id/etOutput"
-            app:layout_constraintStart_toEndOf="@id/llCopy"
-            app:layout_constraintTop_toTopOf="@id/llCopy">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="19dp"
-                android:layout_height="22dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_share"
-                app:tint="@color/button_bg_color" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvShare"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOutput"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_corner"
                 android:fontFamily="@font/nunito_regular"
-                android:text="@string/action_share"
-                android:textAllCaps="false"
+                android:gravity="start"
+                android:lines="6"
+                android:padding="8dp"
                 android:textColor="@color/black"
-                android:textSize="@dimen/size_22"
-                app:cornerRadius="4dp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                android:textSize="@dimen/size_16"
+                app:layout_constraintTop_toBottomOf="@id/tvOutput"
+                tools:text="https://en.wikipedia.org/wiki/QR_Code" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/llVisitNow"
-            android:layout_width="240dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/button_corner"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@+id/adView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="29dp"
-                android:layout_height="29dp"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llCopy"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_visit" />
+                android:background="@drawable/button_corner_with_stroke"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@id/llShare"
+                app:layout_constraintStart_toStartOf="@id/etOutput"
+                app:layout_constraintTop_toBottomOf="@id/etOutput">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvScan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/nunito_regular"
-                android:text="@string/action_visit_now"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/size_22"
-                app:cornerRadius="4dp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="19dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_copy"
+                    app:tint="@color/button_bg_color" />
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:adSize="SMART_BANNER"
-            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-            app:layout_constraintBottom_toBottomOf="parent" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCopy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/action_copy"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_22"
+                    app:cornerRadius="4dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llShare"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_corner_with_stroke"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@id/etOutput"
+                app:layout_constraintStart_toEndOf="@id/llCopy"
+                app:layout_constraintTop_toTopOf="@id/llCopy">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="19dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_share"
+                    app:tint="@color/button_bg_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/action_share"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_22"
+                    app:cornerRadius="4dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llVisitNow"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/button_corner"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_visit" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvScan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/action_visit_now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_22"
+                    app:cornerRadius="4dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+</RelativeLayout>
