@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/adView"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -126,14 +127,15 @@
                 android:id="@+id/llVisitNow"
                 android:layout_width="240dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="96dp"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/button_corner"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llCopy">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="29dp"
